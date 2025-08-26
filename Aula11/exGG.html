@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>teste Guanabara</title>
+</head>
+<body>
+    <h1>Nacionalidade</h1>
+    <p>Verifique se você é Brasileiro ou Estrangeiro</p>
+    <p>Digite sua nacionalidade</p>
+    Coloque sua Nacionalidade: <input type="text" name="natalidade" id="txtn">
+    <input type="button" value="Verificar" onclick="nacionalidade()">
+    <div id="res">s
+        <!-- Resultado será exibido aqui -->
+    </div>
+    <script>
+        function nacionalidade() {
+            var txtn = document.getElementById("txtn");
+            var res = document.querySelector("div#res");
+             var natalidade = String(txtn.value); 
+            res.innerHTML = `<p>Você digitou: ${natalidade}</p>`;
+            if (natalidade.toLowerCase() === 'brasileiro') { // Comparação insensível a maiúsculas/minúsculas
+                res.innerHTML += `<p>Você é Brasileiro</p>`;
+            } else {
+                  res.innerHTML += `<p>Você é Estrangeiro</p>`;
+            }
+            
+        }
+    </script>
+</body>
+</html>
